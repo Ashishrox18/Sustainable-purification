@@ -1,0 +1,103 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+// Sensor Pins
+#define SOIL_MOISTURE_PIN A0  
+#define PH_SENSOR_PIN A1      
+#define TURBIDITY_SENSOR_PIN A2  
+
+// Relay & Buzzer Pins
+#define PUMP_RELAY_PIN 7  
+#define VALVE_RELAY_PIN 6  
+#define BUZZER_PIN 5       
+
+// Sensor Thresholds
+#define SOIL_MOISTURE_THRESHOLD 400  // Adjust based on soil type
+#define PH_LOW 6.0    // Lower pH limit
+#define PH_HIGH 7.5   // Upper pH limit
+#define TURBIDITY_THRESHOLD 600  // Adjust based on water quality
+
+// LCD Display Setup
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+void setup() {
+    Serial.begin(9600);
+    
+    pinMode(SOIL_MOISTURE_PIN, INPUT);
+    pinMode(PH_SENSOR_PIN, INPUT);
+    pinMode(TURBIDITY_SENSOR_PIN, INPUT);
+    
+    pinMode(PUMP_RELAY_PIN, OUTPUT);
+    pinMode(VALVE_RELAY_PIN, OUTPUT);
+    pinMode(BUZZER_PIN, OUTPUT);
+    
+    digitalWrite(PUMP_RELAY_PIN, HIGH);  // Initially turn OFF pump
+    digitalWrite(VALVE_RELAY_PIN, HIGH); // Initially turn OFF valve
+    digitalWrite(BUZZER_PIN, LOW);
+    
+    lcd.begin();
+    lcd.backlight();
+    lcd.setCursor(0, 0);
+    lcd.print("Smart Irrigation");
+    delay(2000);
+}
+
+void loop() {
+    int soilMoisture = analogRead(SOIL_MOISTURE_PIN);
+    int turbidity = analogRead(TURBIDITY_SENSOR_PIN);
+    float phValue = readPH();
+
+    Serial.print("Soil Moisture: "); Serial.println(soilMoisture);
+    Serial.print("Turbidity: "); Serial.println(turbidity);
+    Serial.print("pH Value: "); Serial.println(phValue);
+
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("SM:");
+    lcd.print(soilMoisture);
+    lcd.print(" T:");
+    lcd.print(turbidity);
+    lcd.setCursor(0, 1);
+    lcd.print("pH:");
+    lcd.print(phValue);
+
+    // Soil moisture control
+    if (soilMoisture < SOIL_MOISTURE_THRESHOLD) {
+        digitalWrite(PUMP_RELAY_PIN, LOW);  // Turn ON pump
+        digitalWrite(VALVE_RELAY_PIN, LOW); // Open valve
+    } else {
+        digitalWrite(PUMP_RELAY_PIN, HIGH); // Turn OFF pump
+        digitalWrite(VALVE_RELAY_PIN, HIGH); // Close valve
+    }
+
+    // Turbidity Check
+    if (turbidity > TURBIDITY_THRESHOLD) {
+        alertUser("Water Too Dirty!");
+    }
+
+    // pH Check
+    if (phValue < PH_LOW || phValue > PH_HIGH) {
+        alertUser("pH Out of Range!");
+    }
+
+    delay(2000);
+}
+
+// Function to Read pH Value
+float readPH() {
+    int sensorValue = analogRead(PH_SENSOR_PIN);
+    float voltage = sensorValue * (5.0 / 1023.0);
+    float phValue = 3.5 * voltage;  // Calibrated equation, adjust as needed
+    return phValue;
+}
+
+// Function to Alert User
+void alertUser(String message) {
+    Serial.println(message);
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print(message);
+    digitalWrite(BUZZER_PIN, HIGH);
+    delay(3000);
+    digitalWrite(BUZZER_PIN, LOW);
+}
