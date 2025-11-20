@@ -1,0 +1,123 @@
+:root{
+  --bg:#fbfbfb;
+  --accent:#19647e;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --accent-2:#28a745;
+}
+
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#1f2937; -webkit-font-smoothing:antialiased}
+.container{max-width:1000px;margin:0 auto;padding:24px}
+
+.site-header{background:linear-gradient(90deg,#ffffff, #f7fcff);border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand h1{margin:6px 0;font-size:20px;color:var(--accent)}
+.brand .tag{font-size:12px;color:var(--muted)}
+.nav a{margin-left:14px;color:var(--muted);text-decoration:none;font-size:14px}
+.nav a:hover{color:var(--accent)}
+
+.hero{padding:36px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+.hero-text h2{font-size:28px;margin:0 0 12px}
+.hero-text p{color:var(--muted);line-height:1.5}
+.cta-row{margin-top:18px}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;border:1px solid transparent;font-weight:600;font-size:14px;cursor:pointer}
+.btn.primary{background:var(--accent);color:white}
+.btn.ghost{background:transparent;border:1px solid #ddd;color:var(--accent)}
+.btn:not(:last-child){margin-right:8px}
+
+.hero-card{background:var(--card);border-radius:10px;padding:16px;box-shadow:0 6px 18px rgba(13, 38, 59, 0.04)}
+.card-title{font-weight:700;margin-bottom:8px}
+.facts{list-style:none;padding:0;margin:0;color:var(--muted)}
+.facts li{padding:6px 0;border-bottom:1px dashed #f1f1f1;font-size:14px}
+
+.section{padding:28px 0}
+.section.alt{background:#fff;border-top:1px solid #f3f4f6;border-bottom:1px solid #f3f4f6;margin-top:10px}
+.flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px}
+.flow-step{background:#f8fafc;padding:14px 18px;border-radius:8px;border:1px solid #eef2f7;font-weight:600}
+.arrow{font-size:20px;color:#9aa3ad}
+
+.demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
+.sensor-card{background:var(--card);padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(13,38,59,0.04);text-align:center}
+.sensor-card h4{margin:0 0 8px;font-size:14px;color:var(--muted)}
+.sensor-value{font-size:24px;font-weight:700;color:var(--accent)}
+
+.demo-controls{margin-top:12px}
+.recommendation{background:#ffffff;border-left:4px solid var(--accent-2);padding:12px 16px;border-radius:6px;margin-top:16px}
+.small{color:var(--muted);font-size:14px}
+
+.site-footer{padding:18px 0;margin-top:26px;background:transparent;border-top:1px solid #eee}
+.socials .btn{margin-right:8px;background:#fff;border:1px solid #eee;color:var(--accent)}
+
+@media (max-width:880px){
+  .hero-grid{grid-template-columns:1fr}
+  .header-inner{flex-direction:column;align-items:flex-start;gap:10px}
+  .nav{display:flex;flex-wrap:wrap}
+}
+script.js
+javascript
+Copy code
+// Simple simulated IoT demo for Krishi Inspiro.
+// Start/stop simulation and produce AI recommendations.
+// No external libs required.
+
+let simInterval = null;
+const phEl = document.getElementById('ph');
+const tdsEl = document.getElementById('tds');
+const tempEl = document.getElementById('temp');
+const moistEl = document.getElementById('moist');
+const recText = document.getElementById('recText');
+
+function randomBetween(min, max, fixed=1) {
+  return (Math.random() * (max - min) + min).toFixed(fixed);
+}
+
+function simulateStep(){
+  // Simulate sensor readings
+  const ph = randomBetween(6.2, 8.4, 2);
+  const tds = Math.round(randomBetween(150, 850, 0)); // ppm
+  const temp = randomBetween(20, 34, 1);
+  const moist = Math.round(randomBetween(18, 86, 0)); // %
+
+  phEl.textContent = ph;
+  tdsEl.textContent = tds;
+  tempEl.textContent = temp;
+  moistEl.textContent = moist;
+
+  // Simple rule-based "AI" recommendations (demo)
+  let msgs = [];
+  if (ph < 6.5) msgs.push('Increase alkalinity: consider liming before irrigation.');
+  if (ph > 8.2) msgs.push('High pH: check source water mixing or buffer before use.');
+  if (tds > 700) msgs.push('High salinity: dilute treated water or use for tolerant crops only.');
+  if (moist < 30) msgs.push('Soil dry: schedule irrigation (200–300 L/acre now).');
+  if (moist > 75) msgs.push('Soil saturated: delay irrigation to avoid waterlogging.');
+
+  if (msgs.length === 0) {
+    recText.textContent = 'Water and soil parameters look stable. Maintain current schedule and monitor daily.';
+  } else {
+    recText.textContent = msgs.join(' ');
+  }
+}
+
+document.getElementById('startSim').addEventListener('click', () => {
+  if (simInterval) return;
+  simulateStep();
+  simInterval = setInterval(simulateStep, 2500);
+});
+
+document.getElementById('stopSim').addEventListener('click', () => {
+  if (!simInterval) return;
+  clearInterval(simInterval);
+  simInterval = null;
+});
+
+document.getElementById('resetSim').addEventListener('click', () => {
+  clearInterval(simInterval);
+  simInterval = null;
+  phEl.textContent = '--';
+  tdsEl.textContent = '--';
+  tempEl.textContent = '--';
+  moistEl.textContent = '--';
+  recText.textContent = 'No data yet. Start simulation to receive recommendations.';
+});

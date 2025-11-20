@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Krishi Inspiro — Smart Algae Filtration & IoT Farming</title>
+  <meta name="description" content="Krishi Inspiro: Purify wastewater with recombinant Spirulina, recycle for irrigation, and use IoT+AI for smart resource allocation." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Krishi Inspiro</h1>
+        <p class="tag">Smart algae filtration · IoT · AI · Circular farming</p>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#how">How it works</a>
+        <a href="#demo">IoT Demo</a>
+        <a href="#impact">Impact</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h2>Turn waste into water. Turn algae into fertility.</h2>
+          <p>Krishi Inspiro uses recombinant Spirulina, low-power IoT sensors and AI to purify wastewater, recycle irrigation water, and create organic fertilizer for smallholder farms.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#demo">See Demo</a>
+            <a class="btn ghost" href="https://willowy-cat-2473ab.netlify.app/" target="_blank">Original Site</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="card-title">Quick Facts</div>
+          <ul class="facts">
+            <li>4 recombinant Spirulina strains (CFTRI)</li>
+            <li>IoT sensor suite: pH, TDS, Temp, Moisture</li>
+            <li>Low-power, modular, scalable</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <h3>Problem</h3>
+      <p>Untreated industrial wastewater and excessive chemical fertilizer use are contaminating farmland, reducing yields, and damaging ecosystems. Farmers lack affordable tools for clean water and precise resource allocation.</p>
+
+      <h3>Objective</h3>
+      <p>Create a low-cost, circular system that purifies wastewater using algae, converts biomass into fertilizer, and uses IoT + AI to optimize water and nutrient allocation.</p>
+    </section>
+
+    <section id="how" class="section alt container">
+      <h3>How it works</h3>
+      <div class="flow">
+        <div class="flow-step">Effluent collection</div>
+        <div class="arrow">→</div>
+        <div class="flow-step">Algae bio-filtration</div>
+        <div class="arrow">→</div>
+        <div class="flow-step">Harvest biomass → Fertilizer</div>
+        <div class="arrow">→</div>
+        <div class="flow-step">IoT monitoring & AI allocation</div>
+      </div>
+      <p class="small">Adaptive algae ratios handle different effluents and soil types. Smart allocation reduces water & fertilizer use while improving yields.</p>
+    </section>
+
+    <section id="demo" class="section container">
+      <h3>IoT Demo (simulated)</h3>
+      <p>Interactive simulated sensors show how the system monitors water & soil in real time.</p>
+
+      <div class="demo-grid">
+        <div class="sensor-card">
+          <h4>Water pH</h4>
+          <div id="ph" class="sensor-value">--</div>
+        </div>
+        <div class="sensor-card">
+          <h4>TDS (ppm)</h4>
+          <div id="tds" class="sensor-value">--</div>
+        </div>
+        <div class="sensor-card">
+          <h4>Water Temp (°C)</h4>
+          <div id="temp" class="sensor-value">--</div>
+        </div>
+        <div class="sensor-card">
+          <h4>Soil Moisture (%)</h4>
+          <div id="moist" class="sensor-value">--</div>
+        </div>
+      </div>
+
+      <div class="demo-controls">
+        <button id="startSim" class="btn primary">Start Simulation</button>
+        <button id="stopSim" class="btn ghost">Stop</button>
+        <button id="resetSim" class="btn">Reset</button>
+      </div>
+
+      <div class="recommendation" id="recommendation">
+        <strong>AI Recommendation:</strong>
+        <p id="recText">No data yet. Start simulation to receive recommendations.</p>
+      </div>
+    </section>
+
+    <section id="impact" class="section alt container">
+      <h3>Impact & Scalability</h3>
+      <ul>
+        <li>Reduce chemical fertilizer dependency by converting algae biomass to organic fertilizer.</li>
+        <li>Conserve freshwater by safely reusing treated water for irrigation.</li>
+        <li>Low-power IoT enables deployment in remote areas with limited energy.</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section container">
+      <h3>Get in touch</h3>
+      <p>Lead: <strong>Ashish Srinivas</strong> · Mysuru, Karnataka</p>
+      <p>Email: <a href="mailto:tamboobaba@gmail.com">tamboobaba@gmail.com</a></p>
+      <p>Project: Krishi Inspiro — Smart Algae Filtration & AIoT Farming</p>
+      <div class="socials">
+        <a href="#" class="btn">Instagram</a>
+        <a href="#" class="btn">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Krishi Inspiro · Built for hackathons & demos · MIT License</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
