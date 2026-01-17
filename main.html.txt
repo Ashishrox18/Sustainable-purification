@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Krishi Inspiro — Smart Algae Filtration & IoT Farming</title>
-  <meta name="description" content="Krishi Inspiro: Purify wastewater with recombinant Spirulina, recycle for irrigation, and use IoT+AI for smart resource allocation." />
+  <meta name="description" content="Krishi Inspiro: Wastewater purification with recombinant Spirulina, recycle for irrigation, and use IoT+AI for smart resource allocation." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -132,4 +132,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
