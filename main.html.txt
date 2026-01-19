@@ -38,7 +38,7 @@
         <div class="hero-card">
           <div class="card-title">Quick Facts</div>
           <ul class="facts">
-            <li>4 recombinant Spirulina strains (CFTRI)</li>
+            <li>4 recombinant Spirulina Algae Culture Strains</li>
             <li>IoT sensor suite: pH, TDS, Temp, Moisture</li>
             <li>Low-power, modular, scalable</li>
           </ul>
@@ -134,3 +134,4 @@
 </body>
 
 </html>
+
