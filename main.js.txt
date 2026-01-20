@@ -35,7 +35,7 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .section{padding:28px 0}
 .section.alt{background:#fff;border-top:1px solid #f3f4f6;border-bottom:1px solid #f3f4f6;margin-top:10px}
 .flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px}
-.flow-step{background:#f8fafc;padding:14px 18px;border-radius:8px;border:1px solid #eef2f7;font-weight:600}
+.flow-step{background:#f8fafc;padding:14px 18px;border-radius:20px;border:2px solid #eef2f7;font-weight:600}
 .arrow{font-size:20px;color:#9aa3ad}
 
 .demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
@@ -120,4 +120,5 @@ document.getElementById('resetSim').addEventListener('click', () => {
   tempEl.textContent = '--';
   moistEl.textContent = '--';
   recText.textContent = 'No data yet. Start simulation to receive recommendations.';
+
 });
