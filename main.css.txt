@@ -8,7 +8,7 @@
 
 *{box-sizing:border-box}
 body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#1f2937; -webkit-font-smoothing:antialiased}
-.container{max-width:1000px;margin:0 auto;padding:24px}
+.container{max-width:9000px;margin:0 auto;padding:28px}
 
 .site-header{background:linear-gradient(90deg,#ffffff, #f7fcff);border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
 .header-inner{display:flex;align-items:center;justify-content:space-between}
@@ -120,4 +120,5 @@ document.getElementById('resetSim').addEventListener('click', () => {
   tempEl.textContent = '--';
   moistEl.textContent = '--';
   recText.textContent = 'No data yet. Start simulation to receive recommendations.';
+
 });
