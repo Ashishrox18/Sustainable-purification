@@ -115,7 +115,7 @@
     <section id="contact" class="section container">
       <h3>Get in touch</h3>
       <p>Lead: <strong>Ashish Srinivas</strong> · Mysuru, Karnataka</p>
-      <p>Email: <a href="mailto:tamboobaba@gmail.com">tamboobaba@gmail.com</a></p>
+      <p>Email: <a href="mailto:ashish@gmail.com">ashish@gmail.com</a></p>
       <p>Project: Krishi Inspiro — Smart Algae Filtration & AIoT Farming</p>
       <div class="socials">
         <a href="#" class="btn">Instagram</a>
@@ -134,4 +134,5 @@
 </body>
 
 </html>
+
 
