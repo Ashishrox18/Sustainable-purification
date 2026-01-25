@@ -58,9 +58,7 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 script.js
 javascript
 Copy code
-// Simple simulated IoT demo for Krishi Inspiro.
-// Start/stop simulation and produce AI recommendations.
-// No external libs required.
+
 
 let simInterval = null;
 const phEl = document.getElementById('ph');
@@ -75,7 +73,7 @@ function randomBetween(min, max, fixed=1) {
 
 function simulateStep(){
   // Simulate sensor readings
-  const ph = randomBetween(6.2, 8.4, 2);
+  const ph = randomBetween(8.5, 10, 2);
   const tds = Math.round(randomBetween(150, 850, 0)); // ppm
   const temp = randomBetween(20, 34, 1);
   const moist = Math.round(randomBetween(18, 86, 0)); // %
@@ -85,7 +83,7 @@ function simulateStep(){
   tempEl.textContent = temp;
   moistEl.textContent = moist;
 
-  // Simple rule-based "AI" recommendations (demo)
+
   let msgs = [];
   if (ph < 6.5) msgs.push('Increase alkalinity: consider liming before irrigation.');
   if (ph > 8.2) msgs.push('High pH: check source water mixing or buffer before use.');
@@ -122,3 +120,4 @@ document.getElementById('resetSim').addEventListener('click', () => {
   recText.textContent = 'No data yet. Start simulation to receive recommendations.';
 
 });
+
