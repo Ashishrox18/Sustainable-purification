@@ -116,8 +116,9 @@ document.getElementById('resetSim').addEventListener('click', () => {
   phEl.textContent = '--';
   tdsEl.textContent = '--';
   tempEl.textContent = '--';
-  moistEl.textContent = '--';
+  moistureEl.textContent = '--';
   recText.textContent = 'No data yet. Start simulation to receive recommendations.';
 
 });
+
 
