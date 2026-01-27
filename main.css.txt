@@ -17,7 +17,7 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .nav a{margin-left:14px;color:var(--muted);text-decoration:none;font-size:14px}
 .nav a:hover{color:var(--accent)}
 
-.hero{padding:36px 0}
+.hero{padding:48px 0}
 .hero-grid{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
 .hero-text h2{font-size:28px;margin:0 0 12px}
 .hero-text p{color:var(--muted);line-height:1.5}
@@ -122,3 +122,4 @@ document.getElementById('resetSim').addEventListener('click', () => {
   recText.textContent = 'No data yet. Start simulation to receive recommendations.';
 
 });
+
