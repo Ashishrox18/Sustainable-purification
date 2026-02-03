@@ -87,7 +87,7 @@ function simulateStep(){
   let msgs = [];
   if (ph < 6.5) msgs.push('Increase alkalinity: consider liming before irrigation.');
   if (ph > 8.2) msgs.push('High pH: check source water mixing or buffer before use.');
-  if (tds > 700) msgs.push('High salinity: dilute treated water or use for tolerant crops only.');
+  if (tds > 1000) msgs.push('High salinity: dilute treated water or use for tolerant crops only.');
   if (moist < 30) msgs.push('Soil dry: schedule irrigation (200–300 L/acre now).');
   if (moist > 75) msgs.push('Soil saturated: delay irrigation to avoid waterlogging.');
 
@@ -120,6 +120,7 @@ document.getElementById('resetSim').addEventListener('click', () => {
   recText.textContent = 'No data yet. Start simulation to receive recommendations.';
 
 });
+
 
 
 
