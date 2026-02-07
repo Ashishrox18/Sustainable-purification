@@ -78,7 +78,7 @@ function simulateStep(){
   const temp = randomBetween(20, 34, 1);
   const moist = Math.round(randomBetween(18, 86, 0)); // %
 
-  phEl.textContent = ph;
+  phE2.textContent = ph;
   tdsEl.textContent = tds;
   tempEl.textContent = temp;
   moistEl.textContent = moist;
@@ -120,6 +120,7 @@ document.getElementById('resetSim').addEventListener('click', () => {
   recText.textContent = 'No data yet. Start simulation to receive recommendations.';
 
 });
+
 
 
 
