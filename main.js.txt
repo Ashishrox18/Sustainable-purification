@@ -73,7 +73,7 @@ function randomBetween(min, max, fixed=1) {
 
 function simulateStep(){
   // Simulate sensor readings
-  const ph = randomBetween(8.5, 10, 2);
+  const ph_value = randomBetween(8.5, 10, 2);
   const tds = Math.round(randomBetween(150, 850, 0)); // ppm
   const temp = randomBetween(20, 34, 1);
   const moist = Math.round(randomBetween(18, 86, 0)); // %
@@ -120,6 +120,7 @@ document.getElementById('resetSim').addEventListener('click', () => {
   recText.textContent = 'No data yet. Start simulation to receive recommendations.';
 
 });
+
 
 
 
