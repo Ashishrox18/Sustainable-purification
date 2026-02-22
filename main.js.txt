@@ -113,13 +113,14 @@ document.getElementById('stopSim').addEventListener('click', () => {
 document.getElementById('resetSim').addEventListener('click', () => {
   clearInterval(simInterval);
   simIntervals = null;
-  phEl.textContent = '--';
+  phEl1.textContent = '--';
   tdsEl.textContent = '--';
   tempEl.textContent = '--';
   moistureEl.textContent = '--';
   recText.textContent = 'No data yet. Start simulation to receive recommendations.';
 
 });
+
 
 
 
