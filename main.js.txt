@@ -1,4 +1,4 @@
-867:root{
+6867:root{
   --bg:#fbfbfb;
   --accent:#19647e;
   --muted:#6b7280;
@@ -62,7 +62,7 @@ Copy code
 
 let simInterval = null;
 const phmeterE2 = document.getElementById('ph');
-const tdsmeterEl = document.getElementById('tds');
+const tdsmeterE4 = document.getElementById('tds');
 const tempE2 = document.getElementById('temp');
 const moistEl = document.getElementById('moist');
 const recText = document.getElementById('recText');
@@ -120,6 +120,7 @@ document.getElementById('resetSim').addEventListener('click', () => {
   recText.textContent = 'No data yet. Start simulation to receive recommendations.';
 
 });
+
 
 
 
