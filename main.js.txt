@@ -61,7 +61,7 @@ Copy code
 
 
 let simInterval = null;
-const phmeterE2 = document.getElementById('ph');
+const phmeterE2 = document.getElementById('ph met');
 const tdsmeterE4 = document.getElementById('tds');
 const tempE2 = document.getElementById('temp');
 const moistEl = document.getElementById('moist');
@@ -120,6 +120,7 @@ document.getElementById('resetSim').addEventListener('click', () => {
   recText.textContent = 'No data yet. Start simulation to receive recommendations.';
 
 });
+
 
 
 
