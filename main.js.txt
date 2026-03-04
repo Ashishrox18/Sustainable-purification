@@ -1,4 +1,4 @@
-6867:root{
+86867:root{
   --bg:#fbfbfb;
   --accent:#19647e;
   --muted:#6b7280;
@@ -27,7 +27,7 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .btn.ghost{background:transparent;border:1px solid #ddd;color:var(--accent)}
 .btn:not(:last-child){margin-right:8px}
 
-.hero-card{background:var(--card);border-radius:10px;padding:16px;box-shadow:0 6px 18px rgba(13, 38, 59, 0.04)}
+.hero-cards{background:var(--card);border-radius:10px;padding:16px;box-shadow:0 6px 18px rgba(13, 38, 59, 0.04)}
 .card-title{font-weight:700;margin-bottom:8px}
 .facts{list-style:none;padding:0;margin:0;color:var(--muted)}
 .facts li{padding:6px 0;border-bottom:1px dashed #f1f1f1;font-size:14px}
@@ -120,6 +120,7 @@ document.getElementById('resetSim').addEventListener('click', () => {
   recText.textContent = 'No data yet. Start simulation to receive recommendations.';
 
 });
+
 
 
 
