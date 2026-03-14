@@ -75,7 +75,7 @@ function simulateStep(){
   // Simulate sensor readings
   const ph_value_hs = randomBetween(8.5, 10, 2);
   const tds = Math.round(randomBetween(150, 850, 0)); // ppm
-  const temp = randomBetween(20, 34, 1);
+  const temperature = randomBetween(20, 34, 1);
   const moist = Math.round(randomBetween(18, 86, 0)); // %
 
   phE2.textContent = ph;
