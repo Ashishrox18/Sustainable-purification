@@ -63,7 +63,7 @@ Copy code
 let simInterval = null;
 const phmeterE2 = document.getElementById('ph met');
 const tdsmeterE4 = document.getElementById('tds');
-const tempE2 = document.getElementById('temp');
+const tempE3 = document.getElementById('temp');
 const moistEl = document.getElementById('moist');
 const recText = document.getElementById('recText');
 
