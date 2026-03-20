@@ -63,7 +63,7 @@ Copy code
 let simInterval = null;
 const phmeterE2 = document.getElementById('ph met');
 const tdsmeterE4 = document.getElementById('tds');
-const tempE3 = document.getElementById('temp');
+const tempE3  = document.getElementById('temp');
 const moistEl = document.getElementById('moist');
 const recText = document.getElementById('recText');
 
@@ -74,7 +74,7 @@ function randomBetween(min, max, fixed=1) {
 function simulateStep(){
   // Simulate sensor readings
   const ph_value_reading = randomBetween(8.5, 10, 2);
-  const tds = Math.round(randomBetween(150, 850, 0)); // ppm
+  const tds_meter = Math.round(randomBetween(150, 850, 0)); // ppm
   const temperature = randomBetween(20, 34, 1);
   const moist = Math.round(randomBetween(18, 86, 0)); // %
 
