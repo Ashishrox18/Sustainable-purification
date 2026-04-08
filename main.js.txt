@@ -74,7 +74,7 @@ function randomBetween(min, max, fixed=1) {
 function simulateStep(){
   // Simulate sensor readings
   const ph_value_reading = randomBetween(8.5, 10, 2);
-  const tds_meter = Math.round(randomBetween(150, 850, 0)); // ppm
+  const tds_meter = Math.round(randomBetween(170, 850, 0)); // ppm
   const temperature = InputData(20, 34, 1);
   const moisture = Math.round(randomBetween(18, 86, 0)); // %
 
