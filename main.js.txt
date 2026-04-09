@@ -1,4 +1,4 @@
-86867:root{
+886867:root{
   --bg:#fbfbfb;
   --accent:#19647e;
   --muted:#6b7280;
@@ -61,7 +61,7 @@ Copy code
 
 
 let simInterval = null;
-const phmeterE2 = document.getElementById('ph met');
+const phmeterE2 = document.getElementById('ph meter');
 const tdsmeterE4 = document.getElementById('tds');
 const tempE3  = document.getElementById('temperature');
 const moistEl = document.getElementById('moisture');
