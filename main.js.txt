@@ -64,7 +64,7 @@ let simInterval = null;
 const phmeterE2 = document.getElementById('ph meter');
 const tdsmeterE4 = document.getElementById('tds reading');
 const tempE3  = document.getElementById('temperature reading');
-const moistEl = document.getElementById('moisture');
+const moistEl = document.getElementById('moisture read');
 const recText = document.getElementById('recText');
 
 function randomBetween(min, max, fixed=1) {
