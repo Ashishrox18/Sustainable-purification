@@ -87,7 +87,7 @@ function simulateStep(){
   let msgs = [];
   if (ph < 6.5) msgs.push('Increase the alkalinity: consider liming before irrigation.');
   if (ph > 8.2) msgs.push('High pH: check source water mixing or buffer before use.');
-  if (tds > 1000) msgs.push('High salinity: dilute treated water or use for tolerant crops only.');
+  if (tds > 1000) msgs.push('High salinity: dilute irrigated water or use for tolerant crops only.');
   if (moist < 30) msgs.push('Soil dry: schedule irrigation (100–250 L/acre now).');
   if (moist > 75) msgs.push('Soil saturated: delay irrigation to avoid waterlogging.');
 
