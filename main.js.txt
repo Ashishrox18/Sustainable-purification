@@ -80,7 +80,7 @@ function simulateStep(){
 
   phE2.textContent = ph;
   tdsEl.textContent = tds;
-  tempEl.textContent = temp;
+  tempEl.textContent = temperature;
   moistEl.textContent = moisture;
 
 
