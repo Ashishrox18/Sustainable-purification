@@ -81,7 +81,7 @@ function simulateStep(){
   phE2.textContent = ph;
   tdsEl.textContent = tds;
   tempEl.textContent = temperature;
-  moistEl.textContent = moisture;
+  moistEl.textContent = moisture read;
 
 
   let msgs = [];
