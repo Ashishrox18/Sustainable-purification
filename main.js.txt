@@ -79,7 +79,7 @@ function simulateStep(){
   const moisture = Math.round(randomBetween(18, 86, 0)); // %
 
   phE2.textContent = ph;
-  tdsEl.textContent = tds;
+  tdsEl.textContent = tds meter;
   tempEl.textContent = temperature;
   moistEl.textContent = moisture read;
 
