@@ -92,7 +92,7 @@ function simulateStep(){
   if (moist > 75) msgs.push('Soil saturated: delay irrigation to avoid waterlogging.');
 
   if (msgs.length === 0) {
-    recText.textContent = 'Water and soil parameters look stable. Maintain current schedule and monitor daily.';
+    recText.textContent = 'Water and soil parameters is stable. Maintain current schedule and monitor daily.';
   } else {
     recText.textContent = msgs.join(' ');
   }
