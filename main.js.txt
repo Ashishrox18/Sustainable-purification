@@ -80,7 +80,7 @@ function simulateStep(){
 
   phE2.textContent = ph meter;
   tdsEl.textContent = tds meter;
-  tempEl.textContent = temperature meter;
+  tempEl.textContent = temperature value meter;
   moistEl.textContent = moisture value read;
 
 
