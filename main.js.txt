@@ -81,7 +81,7 @@ function simulateStep(){
   phE2.textContent = ph meter;
   tdsEl.textContent = tds meter;
   tempEl.textContent = temperature value meter;
-  moistEl.textContent = moisture value read;
+  moistEl.textContent = moisture value meter;
 
 
   let msgs = [];
