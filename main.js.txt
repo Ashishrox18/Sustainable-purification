@@ -92,7 +92,7 @@ function simulateStep(){
   if (moist > 75) msgs.push('Soil is water saturated: delay irrigation to avoid clogging of water.');
 
   if (msgs.length === 0) {
-    recText.textContent = 'Water and soil parameters is stable. Maintain current schedule and monitor daily.';
+    recText.textContent = 'Water and soil parameters is healthy. Maintain current schedule and monitor daily.';
   } else {
     recText.textContent = msgs.join(' ');
   }
