@@ -89,7 +89,7 @@ function simulateStep(){
   if (ph > 8.2) msgs.push('High pH: check source water mixing or buffer before use.');
   if (tds > 1000) msgs.push('High salinity TDS: dilute water or use for saline saturated crops.');
   if (moist < 30) msgs.push('Soil is dry: irrigate (100 to 500 Litres per acre) now.');
-  if (moist > 75) msgs.push('Soil is water saturated: delay irrigation to avoid clogging of water');
+  if (moist > 75) msgs.push('Soil is water saturated: delay irrigation to avoid clogging');
 
   if (msgs.length === 0) {
     recText.textContent = 'Water and soil parameters is healthy. Maintain water schedule and monitor daily.';
